@@ -31,11 +31,11 @@ module.exports = {
         let newTask = {
             name,
             priority,
-            id: gloablId
+            id: globalId
         }
+        globalId++
         planner.push(newTask)
         res.status(200).send(planner)
-        gloablId++
 
     },
     deleteTask: (req,res) =>{
@@ -45,10 +45,16 @@ module.exports = {
 
         planner.splice(index, 1)
 
-        res,status(200).send(planner)
+        res.status(200).send(planner)
 
     },
-    editTask: (req,res) =>{
-
-    }
+    editTask: (req,res) => { 
+       let reqId = req.params.id
+       const index = planner.findIndex(elem => +elem.id === +reqId);
+       planner[index] = {
+        ...planner[index],
+        name: req.body.name,
+       }
+        res.status(200).send(planner)
+    }// end of edit func
 }

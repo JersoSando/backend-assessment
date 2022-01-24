@@ -20,8 +20,8 @@ const {
 app.get("/api/compliment", getCompliment)
 app.get("/api/fortune", getFortune)
 
-app.post("./api/planner", addTask)
+app.post("/api/planner", addTask)
 app.delete("/api/planner/:id", deleteTask)
-app.put("/api/planner/:id", editTask)
+app.put("/api/planner/edit/:id", editTask)
 
 app.listen(4000, () => console.log("Server running on 4000"));

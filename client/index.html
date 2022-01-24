@@ -8,16 +8,19 @@
     <button id="fortuneButton">Get a fortune</button>
 
     <form id="plannerForm">
-      Task: <input type="text" placeholder="What do you want to accomplish"/>
-      Priority: <select>
+      Task: <input id='task-input' type="text" placeholder="What do you want to accomplish"/>
+      <label for="select-task">Priority: </label>
+      <select name="task" id="select-task">
         <option value="now">Complete Now</option>
         <option value="later">Complete Later</option>
         <option value="next">Complete Next</option>
       </select>
-      <button>Submit</button>
+      <button type="submit" id="submit-button">Submit</button>
     </form>
 
-    <section id=planner-section></section>
+    <section id=planner-section>
+      
+    </section>
 
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
